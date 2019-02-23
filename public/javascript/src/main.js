@@ -1,5 +1,4 @@
 import UI from './ui';
-import dbCtrl from './dbCtrl';
 import { _bv }from './budget-vars';
 
 const AppCtrl = (function(UI){
@@ -96,26 +95,8 @@ const AppCtrl = (function(UI){
                     UI.deleteExpense(uiID, id);
                 }
             });
-            
-            //show save data modal
-            document.querySelector('.open-save').addEventListener('click', () => {
-                UI.openModal('save-data-form');
-            });
-            
-            //close save data modal
-            document.getElementById('close-save-data').addEventListener('click', (e) => { 
-                UI.closeModal('save-data-form');
-            });
-            
-            //save data
-            document.getElementById('save-data-form').addEventListener('submit', (e) => {
-                UI.saveMonth();
-                e.preventDefault();
-            });
         }
     };
 })(UI);
-
-dbCtrl.getIncome();
 
 AppCtrl.loadEventListeners();

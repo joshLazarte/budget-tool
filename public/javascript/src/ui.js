@@ -2,11 +2,7 @@ import { _bv } from './budget-vars';
 import Calculator from './calculator';
 import Income from './income';
 import Expense from './expenses';
-import dbCtrl from './dbCtrl';
-import Month from './month';
 import './customPollyfills';
-
-let numMonths = 0;
 
 class UI{
     static addIncome(){
@@ -19,8 +15,6 @@ class UI{
         const income = new Income(source.value, Number(amount.value), date.value, ID);
         
         income.init();
-        
-        dbCtrl.postIncome(income);
        
         const uiIncome = document.createElement('li');
         uiIncome.id = `income-${income.id}`;
@@ -63,7 +57,6 @@ class UI{
             _bv.totalIncome -= itemPendingDelete.amount;
             
             Income.getByIdAndDelete(id);
-            dbCtrl.deleteIncome(id);
             
             this.updateTotalIncome();
             this.updateCounters();
@@ -118,8 +111,6 @@ class UI{
                 <i class="fa fa-trash-o delete-btn" aria-hidden="true"></i>
             <span>`;
             
-            dbCtrl.updateIncome(_bv.stagedItem);
-            
             _bv.stagedItem = '';
             
             Expense.getCategoryTotals();
@@ -136,8 +127,6 @@ class UI{
         const expense = new Expense(name.value, category.value, Number(amount.value), date.value, ID);
         
         expense.init();
-        
-        dbCtrl.postExpense(expense);
         
         const uiExpense = document.createElement('li');
         uiExpense.id = `expense-${expense.id}`;
@@ -178,7 +167,6 @@ class UI{
             _bv.totalExpenses -= itemPendingDelete.amount;
             
             Expense.getByIdAndDelete(id);
-            dbCtrl.deleteExpense(id);
             
             Expense.seperateCategories();
             Expense.getCategoryTotals();
@@ -241,24 +229,8 @@ class UI{
             <i class="fa fa-pencil edit-btn" aria-hidden="true"></i> 
             <i class="fa fa-trash-o delete-btn" aria-hidden="true"></i>
         <span>`;
-        dbCtrl.updateExpense(_bv.stagedItem);
         
         _bv.stagedItem = '';
-    }
-    
-    static saveMonth(){
-        const month = document.getElementById('save-month');
-        const year = document.getElementById('save-year');
-        
-        const savedMonth = new Month(numMonths, month.value, year.value, _bv);
-        
-        dbCtrl.saveMonth(savedMonth);
-        
-        month.value = '';
-        year.value = '';
-        this.closeModal('save-data-form');
-        
-        numMonths += 1;
     }
     
     static updateTotalIncome(){

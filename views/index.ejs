@@ -19,18 +19,17 @@
     <navbar class="nav">
         <div class="u-float-left nav__brand">Budget Helper</div>
         <div class="u-float-right nav__options">
-            <a href="/" class="nav__item">Go to Dashboard</a>
             <a href="#" id="open-income" class="nav__item">Add Income</a>
             <a href="#" id="open-expenses" class="nav__item">Add Expense</a>
         </div>
     </navbar>
     
     
-    <div class="small-container">
+    <div class="container">
         <h1 class="text-center">Budget Info</h1>
         <div class="message" id="message" style="display: none"></div>
         
-        <button class="open-save">Save Data</button>
+        <button class="pdf-save">Save as PDF</button>
         
         <h5>Total Income: <span id="total-income"></span></h5>
         <h5>Total Expenses: <span id="total-expense"></span></h5>
@@ -98,7 +97,7 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
-    
+    </div>
     
     <% include ./partials/forms %>
     
