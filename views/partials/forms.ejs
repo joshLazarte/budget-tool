@@ -1,0 +1,58 @@
+<form class="modal" id="income-form">
+            <h3>Add Income <span class="u-float-right x-btn" id="close-income">X</span></h3>
+            <input class="modal__input u-full-width" type="text" id="income-source" placeholder="Source"/>
+            <input class="modal__input u-full-width" type="text" id="income-amount" placeholder="Amount"/>
+            <input class="modal__input u-full-width" type="text" id="income-date" placeholder="Date"/>
+            <input class="modal__input u-full-width" type="submit" value="submit"/>
+        </form>
+        
+        <form class="modal" id="income-edit-form">
+            <h3>Edit Income <span class="u-float-right x-btn" id="close-edit-income">X</span></h3>
+            <input class="modal__input u-full-width" type="text" id="income-edit-source" placeholder="Source"/>
+            <input class="modal__input u-full-width" type="text" id="income-edit-amount" placeholder="Amount"/>
+            <input class="modal__input u-full-width" type="text" id="income-edit-date" placeholder="Date"/>
+            <input class="modal__input u-full-width" type="submit" value="Update"/>
+        </form>
+        
+        <form class="modal" id="expense-form">
+            <h3>Add Expense <span class="u-float-right x-btn" id="close-expenses">X</span></h3>
+            <input class="modal__input u-full-width" type="text" id="expense-name" placeholder="Name"/>
+            <select  class="modal__input u-full-width" id="expense-category">
+                <option disabled selected value=''>Category</option>
+                <option value="bill">Bills</option>
+                <option value="debt">Debt</option>
+                <option value="groceries">Groceries</option>
+                <option value="prepared food">Prepared Food</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="subscriptions">Subscriptions</option>
+                <option value="misc">Miscellaneous</option>
+            </select>
+            <input class="modal__input u-full-width" type="text" id="expense-amount" placeholder="Amount"/>
+            <input class="modal__input u-full-width" type="text" id="expense-date" placeholder="Date"/>
+            <input class="modal__input u-full-width" type="submit" value="submit"/>
+        </form>
+        
+        <form class="modal" id="expense-edit-form">
+            <h3>Edit Expense <span class="u-float-right x-btn" id="close-edit-expenses">X</span></h3>
+            <input class="modal__input u-full-width" type="text" id="expense-edit-name" placeholder="Name"/>
+            <select  class="modal__input u-full-width" id="expense-edit-category">
+                <option disabled selected value=''>Category</option>
+                <option value="bill">Bills</option>
+                <option value="debt">Debt</option>
+                <option value="groceries">Groceries</option>
+                <option value="prepared food">Prepared Food</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="subscriptions">Subscriptions</option>
+                <option value="misc">Miscellaneous</option>
+            </select>
+            <input class="modal__input u-full-width" type="text" id="expense-edit-amount" placeholder="Amount"/>
+            <input class="modal__input u-full-width" type="text" id="expense-edit-date" placeholder="Date"/>
+            <input class="modal__input u-full-width" type="submit" value="update"/>
+        </form>
+        
+        <form class="modal" id="save-data-form">
+            <h3>Save Data As <span class="u-float-right x-btn" id="close-save-data">X</span></h3>
+            <input class="modal__input u-full-width" type="text" id="save-month" placeholder="Month"/>
+            <input class="modal__input u-full-width" type="text" id="save-year" placeholder="Year"/>
+            <input class="modal__input u-full-width" type="submit" value="save"/>
+        </form>

@@ -1,0 +1,450 @@
+{
+  "income": [
+    {
+      "source": "Work",
+      "amount": 1500,
+      "date": "1/1/19",
+      "id": 1
+    },
+    {
+      "source": "HEB",
+      "amount": 50,
+      "date": "1/1/19",
+      "id": 2
+    },
+    {
+      "source": "Lotery",
+      "amount": 100000,
+      "date": "1/4/19",
+      "id": 3
+    },
+    {
+      "source": "test",
+      "amount": 1700,
+      "date": "12-13-18",
+      "id": 4
+    }
+  ],
+  "expenses": [
+    {
+      "name": "Rent",
+      "category": "bill",
+      "amount": 825,
+      "date": "1/1/19",
+      "id": 1
+    },
+    {
+      "name": "Whataburger",
+      "category": "prepared food",
+      "amount": 35,
+      "date": "1/4/19",
+      "id": 2
+    },
+    {
+      "name": "test",
+      "category": "subscriptions",
+      "amount": 500,
+      "date": "1/4/19",
+      "id": 3
+    }
+  ],
+  "months": [
+    {
+      "id": 1,
+      "month": "January",
+      "year": "2019",
+      "data": {
+        "stagedItem": "",
+        "incomeArray": [
+          {
+            "source": "Work",
+            "amount": 1500,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "source": "HEB",
+            "amount": 500,
+            "date": "1/1/19",
+            "id": 2
+          }
+        ],
+        "expenseArray": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          },
+          {
+            "name": "Car Payment",
+            "category": "debt",
+            "amount": 300,
+            "date": "12-21-18",
+            "id": 2
+          }
+        ],
+        "bills": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          }
+        ],
+        "debt": [
+          {
+            "name": "Car Payment",
+            "category": "debt",
+            "amount": 300,
+            "date": "12-21-18",
+            "id": 2
+          }
+        ],
+        "groceries": [],
+        "preparedFood": [],
+        "entertainment": [],
+        "subscriptions": [],
+        "misc": [],
+        "totalsArray": [
+          875,
+          825,
+          300,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "totalBills": 825,
+        "totalDebt": 300,
+        "totalGroceries": 0,
+        "totalPreparedFood": 0,
+        "totalEntertainment": 0,
+        "totalSubscriptions": 0,
+        "totalMisc": 0,
+        "totalIncome": 2000,
+        "totalExpenses": 1125
+      }
+    },
+    {
+      "id": 2,
+      "month": "February",
+      "year": "2019",
+      "data": {
+        "stagedItem": "",
+        "incomeArray": [
+          {
+            "source": "Work",
+            "amount": 1500,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "source": "HEB",
+            "amount": 500,
+            "date": "1/1/19",
+            "id": 2
+          }
+        ],
+        "expenseArray": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          }
+        ],
+        "bills": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          }
+        ],
+        "debt": [],
+        "groceries": [],
+        "preparedFood": [],
+        "entertainment": [],
+        "subscriptions": [],
+        "misc": [],
+        "totalsArray": [
+          1175,
+          825,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "totalBills": 825,
+        "totalDebt": 0,
+        "totalGroceries": 0,
+        "totalPreparedFood": 0,
+        "totalEntertainment": 0,
+        "totalSubscriptions": 0,
+        "totalMisc": 0,
+        "totalIncome": 2000,
+        "totalExpenses": 825
+      }
+    },
+    {
+      "id": 3,
+      "month": "March",
+      "year": "2019",
+      "data": {
+        "stagedItem": "",
+        "incomeArray": [
+          {
+            "source": "Work",
+            "amount": 1500,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "source": "HEB",
+            "amount": 500,
+            "date": "1/1/19",
+            "id": 2
+          }
+        ],
+        "expenseArray": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          }
+        ],
+        "bills": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "12334",
+            "id": 1
+          }
+        ],
+        "debt": [],
+        "groceries": [],
+        "preparedFood": [],
+        "entertainment": [],
+        "subscriptions": [],
+        "misc": [],
+        "totalsArray": [
+          1175,
+          825,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "totalBills": 825,
+        "totalDebt": 0,
+        "totalGroceries": 0,
+        "totalPreparedFood": 0,
+        "totalEntertainment": 0,
+        "totalSubscriptions": 0,
+        "totalMisc": 0,
+        "totalIncome": 2000,
+        "totalExpenses": 825
+      }
+    },
+    {
+      "id": 4,
+      "month": "April",
+      "year": "2019",
+      "data": {
+        "stagedItem": "",
+        "incomeArray": [
+          {
+            "source": "Work",
+            "amount": 1500,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "source": "HEB",
+            "amount": 50,
+            "date": "1/1/19",
+            "id": 2
+          },
+          {
+            "source": "Lotery",
+            "amount": 100000,
+            "date": "1/4/19",
+            "id": 3
+          }
+        ],
+        "expenseArray": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "name": "Whataburger",
+            "category": "prepared food",
+            "amount": 35,
+            "date": "1/4/19",
+            "id": 2
+          }
+        ],
+        "bills": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "1/1/19",
+            "id": 1
+          }
+        ],
+        "debt": [],
+        "groceries": [],
+        "preparedFood": [
+          {
+            "name": "Whataburger",
+            "category": "prepared food",
+            "amount": 35,
+            "date": "1/4/19",
+            "id": 2
+          }
+        ],
+        "entertainment": [],
+        "subscriptions": [],
+        "misc": [],
+        "totalsArray": [
+          100690,
+          825,
+          0,
+          0,
+          35,
+          0,
+          0,
+          0
+        ],
+        "totalBills": 825,
+        "totalDebt": 0,
+        "totalGroceries": 0,
+        "totalPreparedFood": 35,
+        "totalEntertainment": 0,
+        "totalSubscriptions": 0,
+        "totalMisc": 0,
+        "totalIncome": 101550,
+        "totalExpenses": 860
+      }
+    },
+    {
+      "id": 5,
+      "month": "may",
+      "year": "2019",
+      "data": {
+        "stagedItem": "",
+        "incomeArray": [
+          {
+            "source": "Work",
+            "amount": 1500,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "source": "HEB",
+            "amount": 50,
+            "date": "1/1/19",
+            "id": 2
+          },
+          {
+            "source": "Lotery",
+            "amount": 100000,
+            "date": "1/4/19",
+            "id": 3
+          }
+        ],
+        "expenseArray": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "1/1/19",
+            "id": 1
+          },
+          {
+            "name": "Whataburger",
+            "category": "prepared food",
+            "amount": 35,
+            "date": "1/4/19",
+            "id": 2
+          },
+          {
+            "name": "test",
+            "category": "subscriptions",
+            "amount": 500,
+            "date": "1/4/19",
+            "id": 3
+          }
+        ],
+        "bills": [
+          {
+            "name": "Rent",
+            "category": "bill",
+            "amount": 825,
+            "date": "1/1/19",
+            "id": 1
+          }
+        ],
+        "debt": [],
+        "groceries": [],
+        "preparedFood": [
+          {
+            "name": "Whataburger",
+            "category": "prepared food",
+            "amount": 35,
+            "date": "1/4/19",
+            "id": 2
+          }
+        ],
+        "entertainment": [],
+        "subscriptions": [
+          {
+            "name": "test",
+            "category": "subscriptions",
+            "amount": 500,
+            "date": "1/4/19",
+            "id": 3
+          }
+        ],
+        "misc": [],
+        "totalsArray": [
+          100190,
+          825,
+          0,
+          0,
+          35,
+          0,
+          500,
+          0
+        ],
+        "totalBills": 825,
+        "totalDebt": 0,
+        "totalGroceries": 0,
+        "totalPreparedFood": 35,
+        "totalEntertainment": 0,
+        "totalSubscriptions": 500,
+        "totalMisc": 0,
+        "totalIncome": 101550,
+        "totalExpenses": 1360
+      }
+    }
+  ]
+}

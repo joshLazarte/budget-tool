@@ -1,0 +1,48 @@
+.home-page {
+    background-color: white;
+    font-size: 1.6rem;
+}
+
+.message {
+    border-radius: .6rem;
+    color: white;
+    padding: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.results-table{
+    margin: 2rem auto;
+}
+
+
+.list {
+    width: 100%;
+    
+    &__container1 {
+        width: 20%;
+        margin-right: 10rem;
+        &-income {
+            list-style: none;
+            li {
+                color: white;
+                padding: 1rem;
+                background-color: $color-green;
+                border-radius: .6rem;
+            }
+        }
+    }
+    
+    &__container2 {
+        width: 20%;
+         &-expense {
+            list-style: none;
+            li {
+                color: white;
+                padding: 1rem;
+                background-color: $color-red;
+                border-radius: .6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    
+    <title>Budget Tool</title>
+</head>
+<body class="dashboard">
+    
+    <navbar class="nav">
+        <div class="u-float-left nav__brand">Budget Helper</div>
+    </navbar>
+    
+    <h1 class="text-center">Dashboard</h1>
+    <a href="/new">New Month</a><br>
+    <% months.forEach(function(month){ %>
+    <a href="/months/<%=month.id%>"><%=month.month%></a><br>
+    <% }) %>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>    
+    <script type="text/javascript" src="/javascript/dist/main.bundle.js"></script>
+</body>
+</html>

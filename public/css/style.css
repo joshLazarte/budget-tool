@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: 50%; } }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  z-index: 100; }
+
+.small-container {
+  width: 90vw;
+  margin: 0 auto; }
+
+.u-float-right {
+  float: right; }
+
+.u-float-left {
+  float: left; }
+
+.text-center {
+  text-align: center; }
+
+.u-underlined {
+  padding-bottom: .2rem;
+  border-bottom: 1px solid black; }
+
+.nav {
+  display: block;
+  padding: 2rem;
+  background-color: #3244c9;
+  margin-bottom: 2rem;
+  color: white; }
+  .nav::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .nav__brand {
+    dipsplay: inline-block;
+    font-size: 2rem;
+    font-weight: 500; }
+  .nav__options .nav__item {
+    color: white;
+    font-size: 2rem; }
+    .nav__options .nav__item:first-child {
+      margin-right: 1.5rem; }
+
+.modal {
+  display: none; }
+  .modal-expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    width: 50%;
+    background-color: #eee;
+    padding: 2rem;
+    border-radius: .6rem; }
+  .modal__input {
+    display: block; }
+
+.modal-background {
+  display: none; }
+  .modal-background-expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200; }
+
+.x-btn {
+  display: inline-block;
+  font-size: 1.8rem;
+  cursor: pointer; }
+
+.edit-btn,
+.delete-btn {
+  cursor: pointer; }
+
+.open-save {
+  display: block;
+  margin: 3rem auto; }
+
+.home-page {
+  background-color: white;
+  font-size: 1.6rem; }
+
+.message {
+  border-radius: .6rem;
+  color: white;
+  padding: 1rem;
+  font-size: 1.6rem;
+  text-align: center; }
+
+.results-table {
+  margin: 2rem auto; }
+
+.list {
+  width: 100%; }
+  .list__container1 {
+    width: 20%;
+    margin-right: 10rem; }
+    .list__container1-income {
+      list-style: none; }
+      .list__container1-income li {
+        color: white;
+        padding: 1rem;
+        background-color: #44c932;
+        border-radius: .6rem; }
+  .list__container2 {
+    width: 20%; }
+    .list__container2-expense {
+      list-style: none; }
+      .list__container2-expense li {
+        color: white;
+        padding: 1rem;
+        background-color: #ff1a1a;
+        border-radius: .6rem; }

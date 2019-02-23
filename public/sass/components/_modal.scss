@@ -1,0 +1,40 @@
+.modal {
+    display: none;
+    
+    &-expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 500;
+        width: 50%;
+        background-color: #eee;
+        padding: 2rem;
+        border-radius: .6rem;
+    }    
+    
+    &__input {
+        display: block;
+    }
+}
+
+.modal-background {
+    display: none;
+    
+    &-expanded {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,.7);
+        z-index: 200;
+    }    
+}
+
+.x-btn {
+    display: inline-block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    
+}
