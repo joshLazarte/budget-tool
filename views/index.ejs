@@ -29,7 +29,9 @@
         <h1 class="text-center">Budget Info</h1>
         <div class="message" id="message" style="display: none"></div>
         
-        <button class="pdf-save">Save as PDF</button>
+        <form action="/download" method="GET">
+            <button class="pdf-save">Save as PDF</button>
+        </form>
         
         <h5>Total Income: <span id="total-income"></span></h5>
         <h5>Total Expenses: <span id="total-expense"></span></h5>
