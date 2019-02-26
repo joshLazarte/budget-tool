@@ -1,0 +1,75 @@
+{
+  "stagedItem": "",
+  "incomeArray": [
+    {
+      "source": "HEB",
+      "amount": 500,
+      "date": "2/20/19",
+      "id": 0
+    },
+    {
+      "source": "Spectrum",
+      "amount": 1700,
+      "date": "2/20/19",
+      "id": 1
+    }
+  ],
+  "expenseArray": [
+    {
+      "name": "Rent",
+      "category": "bill",
+      "amount": 825,
+      "date": "2/17/19",
+      "id": 0
+    },
+    {
+      "name": "Car Payment",
+      "category": "debt",
+      "amount": 375,
+      "date": "2/21/19",
+      "id": 1
+    }
+  ],
+  "bills": [
+    {
+      "name": "Rent",
+      "category": "bill",
+      "amount": 825,
+      "date": "2/17/19",
+      "id": 0
+    }
+  ],
+  "debt": [
+    {
+      "name": "Car Payment",
+      "category": "debt",
+      "amount": 375,
+      "date": "2/21/19",
+      "id": 1
+    }
+  ],
+  "groceries": [],
+  "preparedFood": [],
+  "entertainment": [],
+  "subscriptions": [],
+  "misc": [],
+  "totalsArray": [
+    1000,
+    825,
+    375,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "totalBills": 825,
+  "totalDebt": 375,
+  "totalGroceries": 0,
+  "totalPreparedFood": 0,
+  "totalEntertainment": 0,
+  "totalSubscriptions": 0,
+  "totalMisc": 0,
+  "totalIncome": 2200,
+  "totalExpenses": 1200
+}

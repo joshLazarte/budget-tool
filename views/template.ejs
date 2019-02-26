@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    
+    <title>Budget Tool</title>
+</head>
+<body class="home-page">
+    
+    <div class="modal-background"></div>
+    
+    <navbar class="nav">
+        <div class="u-float-left nav__brand">Budget Helper</div>
+        <div class="u-float-right nav__options">
+            <a href="#" id="open-income" class="nav__item">Add Income</a>
+            <a href="#" id="open-expenses" class="nav__item">Add Expense</a>
+        </div>
+    </navbar>
+    
+    
+    <div class="container">
+        <h1 class="text-center">Budget Info</h1>
+        <div class="message" id="message" style="display: none"></div>
+        
+        <form action="/download" method="GET">
+            <button class="pdf-save">Save as PDF</button>
+        </form>
+        
+        <h5>Total Income: <span id="total-income"></span></h5>
+        <h5>Total Expenses: <span id="total-expense"></span></h5>
+    
+    <table class="results-table">
+        <thead>
+            <th></th>
+            <th>Bills <span id="billsLength"></span></th>
+            <th>Debt <span id="debtLength"></span></th>
+            <th>Groceries <span id="groceriesLength"></span></th>
+            <th>Prepared Food <span id="preparedFoodLength"></span></th>
+            <th>Entertainment <span id="entertainmentLength"></span></th>
+            <th>Subscriptions <span id="subscriptionsLength"></span></th>
+            <th>Miscellaneous <span id="miscLength"></span></th>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Total</th>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+                <td class="category-total-containers"></td>
+            </tr>
+            <tr>
+                <th scope="row">% of Income</th>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+                <td class="category-percent-containers"></td>
+            </tr>
+            <tr>
+                <th scope="row">% of Expenses</th>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+                <td class="category-expense-percent-containers"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="list">
+        <div class="u-pull-left list__container1">
+            <h5 class="u-underlined">Income <span id="inArLength"></span></h5>
+            <ul class="list__container1-income" id="income-list">
+                
+            </ul>
+        </div>
+        
+        <div class="u-pull-left list__container2">
+            <h5 class="u-underlined">Expenses <span id="exArLength"></span></h5>
+            <ul class="list__container2-expense" id="expense-list">
+               
+            </ul>
+        </div>
+        <div class="u-pull-left" style="height: 40rem; width: 40rem; margin-left: 5rem;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    </div>
+    
+    <% include ./partials/forms %>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>    
+    <script type="text/javascript" src="/javascript/dist/main.bundle.js"></script>
+</body>
+</html>

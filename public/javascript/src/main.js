@@ -1,5 +1,6 @@
 import UI from './ui';
 import { _bv }from './budget-vars';
+import ApiCtrl from './ApiCtrl';
 
 const AppCtrl = (function(UI){
     return{
@@ -94,7 +95,14 @@ const AppCtrl = (function(UI){
                     const id = Number(uiID.slice(8));
                     UI.deleteExpense(uiID, id);
                 }
-            });
+            }); 
+            
+             //Send to database
+             document.querySelector('.pdf-save').addEventListener('click', (e) => {                 
+                ApiCtrl.sendToDb(_bv);                 
+                e.preventDefault();           
+            });  
+
         }
     };
 })(UI);
