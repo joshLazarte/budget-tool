@@ -7,25 +7,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css" type="text/css" />
-    
+    crossorigin="anonymous">   
     <title>Budget Tool</title>
 </head>
+
+<style>
+    <%= css %>
+</style>
+
 <body class="home-page">
     
     <div class="modal-background"></div>
     
     <navbar class="nav">
-        <div class="u-float-left nav__brand">Budget Helper</div>
-        <div class="u-float-right nav__options">
-            <a href="#" id="open-income" class="nav__item">Add Income</a>
-            <a href="#" id="open-expenses" class="nav__item">Add Expense</a>
-        </div>
+        <div>Budget Helper</div>        
     </navbar>
     
     
-    <div class="container">
+    <div style="padding: 0 1%;">
         <h1 class="text-center">Budget Info</h1>
 
         <% function difference(){ %>
@@ -35,22 +34,18 @@
         <% const diff = difference() %>
 
         <% if(diff > 0) { %>
-            <div class="message" id="message" style="background: #44c932;">
+            <div class="message" id="message" style="background: #44c932; width: 80%; margin: 20px auto;">
                     You are Under Budget by $<%= diff %>
             </div>
         <% } else if(diff < 0) { %>
-            <div class="message" id="message" style="background: #ff1a1a;">
+            <div class="message" id="message" style="background: #ff1a1a; width: 80%; margin: 20px auto;">
                     You are Over Budget by $<%= (diff*-1) %>
             </div>
         <% } else { %>
-            <div class="message" id="message" style="background: orange;">
+            <div class="message" id="message" style="background: orange; width: 80%; margin: 20px auto;">
                     You Broke Even... Be Careful!
             </div>
         <% } %>       
-        
-        <form action="/download" method="GET">
-            <button class="pdf-save">Save as PDF</button>
-        </form>
         
         <h5>Total Income: <span id="total-income"><%= data.totalIncome %></span></h5>
         <h5>Total Expenses: <span id="total-expense"><%= data.totalExpenses %></span></h5>
@@ -124,11 +119,7 @@
             <ul class="list__container1-income" id="income-list">
                 <% data.incomeArray.forEach(function(income){ %>
                     <li id="income-<%= income.id %>">
-                        <%= income.source %>: <%= income.amount %> <br> <%= income.date %>
-                        <span class="u-float-right">
-                            <i class="fa fa-pencil edit-btn" aria-hidden="true"></i> 
-                            <i class="fa fa-trash-o delete-btn" aria-hidden="true"></i>
-                        <span>
+                        <%= income.source %>: <%= income.amount %> <br> <%= income.date %>                        
                     </li>
                 <% }); %>
             </ul>
@@ -139,11 +130,7 @@
             <ul class="list__container2-expense" id="expense-list">
                 <% data.expenseArray.forEach(function(expense){ %>
                     <li id="expense-<%= expense.id %>">
-                        <%= expense.name %>: <%= expense.amount %> <br> <%= expense.date %>
-                        <span class="u-float-right">
-                            <i class="fa fa-pencil edit-btn" aria-hidden="true"></i> 
-                            <i class="fa fa-trash-o delete-btn" aria-hidden="true"></i>
-                        <span>
+                        <%= expense.name %>: <%= expense.amount %> <br> <%= expense.date %>                        
                     </li>
                 <% }); %>
             </ul>
@@ -154,7 +141,6 @@
     </div>
     </div>    
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>    
-    <script type="text/javascript" src="/javascript/dist/main.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>  
 </body>
 </html>
