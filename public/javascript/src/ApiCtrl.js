@@ -3,9 +3,10 @@ import envVars  from './envVars';
 
 const ApiCtrl = {
 
-    sendToDb: function(data) {        
-        http.post(`${envVars.postRoute}`, data)                                
+    sendToDb: function(data, cb) {        
+        http.post(`${envVars.postRoute}`, data)                                        
         .catch(err => console.log(err));
+        cb();
     }   
 }
 

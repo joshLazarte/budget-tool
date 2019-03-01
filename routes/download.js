@@ -4,6 +4,7 @@ const express   = require('express'),
       
 router.get('/', (req,res) => {
     const file = path.join('./docs', 'budget.pdf');
+    console.log('download route');
     res.download(file, (err) => {
         if(err) {
             console.log(err);           

@@ -99,10 +99,16 @@ const AppCtrl = (function(UI){
             
              //Send to database
              document.querySelector('.pdf-save').addEventListener('click', (e) => {                 
-                ApiCtrl.sendToDb(_bv);                 
+                ApiCtrl.sendToDb(_bv, () => {
+                    UI.openModal('download-pdf');
+                });                 
                 e.preventDefault();           
-            });  
+            }); 
 
+            //close pdf download modal
+            document.getElementById('close-pdf-download').addEventListener('click', () => {
+                UI.closeModal('download-pdf');
+            })
         }
     };
 })(UI);

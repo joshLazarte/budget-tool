@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express'),
       router  = express.Router(),
-      fs      = require('fs'),
-      //path    = require('path'),
-      //puppeteer = require('puppeteer'),
+      fs      = require('fs'),      
       pdf     = require('html-pdf'),
       ejs     = require('ejs');
 
@@ -12,13 +10,13 @@ router.get('/', (req,res) => {
     res.send('API Get Route')
 });  
 
-const compile = function(template, data, css){
+const compile = (template, data, css) => {
     const compiled = ejs.compile(fs.readFileSync(template, 'utf8'));
     const html = compiled({data, css});
     return html;
 }
 
-const getDataFromFile = function(file) {    
+const getDataFromFile = (file) => {    
    const data = fs.readFileSync(file, 'utf8', (err, contents) => {
             if(err) throw err;
             return contents;
@@ -34,7 +32,7 @@ router.post('/', async (req, res) => {
     await pdf.create(content, options).toFile('./docs/budget.pdf', (err, res) => {
         if (err) return console.log(err);
         console.log(res); 
-    });       
+    });      
 }); 
 
 module.exports = router;
