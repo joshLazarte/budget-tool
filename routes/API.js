@@ -2,7 +2,9 @@
 const express = require('express'),
       router  = express.Router(),
       fs      = require('fs'),
-      puppeteer = require('puppeteer'),
+      //path    = require('path'),
+      //puppeteer = require('puppeteer'),
+      pdf     = require('html-pdf'),
       ejs     = require('ejs');
 
 
@@ -24,24 +26,15 @@ const getDataFromFile = function(file) {
     return data;
 }
 
-router.post('/', async (req,res) => {   
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage(); 
-
+router.post('/', async (req, res) => {      
     const css = getDataFromFile('./public/css/style.css'); 
+    const content = compile('./docs/template.ejs', req.body, css);     
+    const options = {format: 'Letter'};
 
-    const content = compile('./docs/template.ejs', req.body, css);   
-
-    await page.setContent(content);
-    await page.emulateMedia('screen');    
-    await page.pdf({
-        path: './docs/budget.pdf',
-        format: 'A4',
-        printBackground: true
-    });
-
-    console.log('done');
-    await browser.close();           
+    await pdf.create(content, options).toFile('./docs/budget.pdf', (err, res) => {
+        if (err) return console.log(err);
+        console.log(res); 
+    });       
 }); 
 
 module.exports = router;

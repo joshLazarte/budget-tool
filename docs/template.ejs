@@ -15,16 +15,14 @@
     <%= css %>
 </style>
 
-<body class="home-page">
-    
-    <div class="modal-background"></div>
+<body class="home-page"  style="font-size: 3rem !important;">    
     
     <navbar class="nav">
         <div>Budget Helper</div>        
     </navbar>
     
     
-    <div style="padding: 0 1%;">
+    <div style="width: 80%; margin: 0 auto;">
         <h1 class="text-center">Budget Info</h1>
 
         <% function difference(){ %>
@@ -34,21 +32,21 @@
         <% const diff = difference() %>
 
         <% if(diff > 0) { %>
-            <div class="message" id="message" style="background: #44c932; width: 80%; margin: 20px auto;">
+            <div class="message" id="message" style="background: #44c932; margin: 20px 0; font-size: 3rem;">
                     You are Under Budget by $<%= diff %>
             </div>
         <% } else if(diff < 0) { %>
-            <div class="message" id="message" style="background: #ff1a1a; width: 80%; margin: 20px auto;">
+            <div class="message" id="message" style="background: #ff1a1a margin: 20px 0; font-size: 3rem;">
                     You are Over Budget by $<%= (diff*-1) %>
             </div>
         <% } else { %>
-            <div class="message" id="message" style="background: orange; width: 80%; margin: 20px auto;">
+            <div class="message" id="message" style="background: orange; margin: 20px 0; font-size: 3rem;">
                     You Broke Even... Be Careful!
             </div>
         <% } %>       
         
-        <h5>Total Income: <span id="total-income"><%= data.totalIncome %></span></h5>
-        <h5>Total Expenses: <span id="total-expense"><%= data.totalExpenses %></span></h5>
+        <h5 style="font-size: 3rem;">Total Income: <span id="total-income"><%= data.totalIncome %></span></h5>
+        <h5 style="font-size: 3rem;">Total Expenses: <span id="total-expense"><%= data.totalExpenses %></span></h5>
     
     <table class="results-table">
         <thead>
@@ -115,7 +113,7 @@
     
     <div class="list">
         <div class="u-pull-left list__container1">
-            <h5 class="u-underlined">Income <span id="inArLength"><%= data.incomeArray.length %></span></h5>
+            <h5 class="u-underlined" style="font-size: 3rem;">Income <span id="inArLength"><%= data.incomeArray.length %></span></h5>
             <ul class="list__container1-income" id="income-list">
                 <% data.incomeArray.forEach(function(income){ %>
                     <li id="income-<%= income.id %>">
@@ -126,7 +124,7 @@
         </div>
         
         <div class="u-pull-left list__container2">
-            <h5 class="u-underlined">Expenses <span id="exArLength"><%= data.expenseArray.length %></span></h5>
+            <h5 class="u-underlined" style="font-size: 3rem;">Expenses <span id="exArLength"><%= data.expenseArray.length %></span></h5>
             <ul class="list__container2-expense" id="expense-list">
                 <% data.expenseArray.forEach(function(expense){ %>
                     <li id="expense-<%= expense.id %>">
