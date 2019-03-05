@@ -106,13 +106,21 @@ const AppCtrl = (function(UI){
 
             //close pdf download modal on exit
             document.getElementById('close-pdf-download').addEventListener('click', () => {
-                UI.closeModal('download-pdf');
+                PdfCtrl.deletePdf(UI.closeModal, 'download-pdf');
             });
             
             //close pdf download modal on submit
             document.getElementById('download-submit').addEventListener('click', () => {
                 UI.closeModal('download-pdf');
+                PdfCtrl.pdfWritten = false;
             });
+            
+            //delete pdf on refresh or redirect
+            window.onbeforeunload = () => {
+                if(PdfCtrl.pdfWritten){
+                    PdfCtrl.deletePdf();
+                }
+            };
         }
     };
 })(UI);
