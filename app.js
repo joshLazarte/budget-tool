@@ -4,18 +4,18 @@ const express    = require('express'),
       app        = express(),
       bodyParser = require('body-parser'),
 //ROUTE DEFS      
-      download   = require('./routes/download'),
+      pdf        = require('./routes/pdf'),
       API        = require('./routes/API');
 
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({extended: true})); 
-app.use(bodyParser.json())    
+app.use(bodyParser.json());    
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 //ROUTES
 app.get('/', (req, res) => res.render('index'));
-app.use('/download', download);
+app.use('/pdf', pdf);
 app.use('/API', API);
 
 //INIT SERVER

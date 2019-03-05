@@ -57,7 +57,11 @@
             <input class="modal__input u-full-width" type="submit" value="save"/>
         </form>
 
-        <form class="modal" id="download-pdf" action="/download" method="GET">
+        <form class="modal" id="download-pdf" action="/pdf/download" method="GET">
             <h3>Download PDF <span class="u-float-right x-btn" id="close-pdf-download">X</span></h3>            
-            <input class="modal__input u-full-width" type="submit" value="Download"/>
+            <input id="download-submit" class="modal__input u-full-width" type="submit" value="Download"/>
         </form>
+        
+        
+        <img class="modal" id="loading-gif" src="/gif/loading.gif" alt="loading gif">
+   

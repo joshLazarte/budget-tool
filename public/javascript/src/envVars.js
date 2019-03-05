@@ -1,5 +1,5 @@
 const envVars = {
-    postRoute: 'http://localhost:8000/api'
-}
+    postRoute: 'https://j3l-webdesign-lazarte.c9users.io/pdf'
+};
 
 export default envVars;

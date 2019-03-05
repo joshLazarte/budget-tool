@@ -9,7 +9,7 @@ class EasyHTTP {
     }
     
     //make post request
-    async post(url, data) {             
+    async post(url, data) {
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -17,7 +17,7 @@ class EasyHTTP {
             },
             body: JSON.stringify(data)
         });              
-        const resData = await response.json();                     
+        const resData = await response.json(); 
         return resData;        
     }
     

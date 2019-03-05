@@ -86,6 +86,10 @@ body {
   font-size: 1.8rem;
   cursor: pointer; }
 
+#loading-gif {
+  height: 25rem;
+  width: 25rem; }
+
 .edit-btn,
 .delete-btn {
   cursor: pointer; }

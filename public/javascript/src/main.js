@@ -1,6 +1,6 @@
 import UI from './ui';
 import { _bv }from './budget-vars';
-import ApiCtrl from './ApiCtrl';
+import PdfCtrl from './PdfCtrl';
 
 const AppCtrl = (function(UI){
     return{
@@ -97,18 +97,22 @@ const AppCtrl = (function(UI){
                 }
             }); 
             
-             //Send to database
-             document.querySelector('.pdf-save').addEventListener('click', (e) => {                 
-                ApiCtrl.sendToDb(_bv, () => {
-                    UI.openModal('download-pdf');
-                });                 
-                e.preventDefault();           
+             //save as pdf
+             document.querySelector('.pdf-save').addEventListener('click', (e) => {
+                UI.openModal('loading-gif'); 
+                PdfCtrl.savePdf(_bv, UI.closeModal, 'loading-gif', UI.openModal, 'download-pdf');
+                e.preventDefault();          
             }); 
 
-            //close pdf download modal
+            //close pdf download modal on exit
             document.getElementById('close-pdf-download').addEventListener('click', () => {
                 UI.closeModal('download-pdf');
-            })
+            });
+            
+            //close pdf download modal on submit
+            document.getElementById('download-submit').addEventListener('click', () => {
+                UI.closeModal('download-pdf');
+            });
         }
     };
 })(UI);
