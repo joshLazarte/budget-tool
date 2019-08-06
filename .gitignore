@@ -2,3 +2,5 @@
 /public/javascript/dist/
 /public/javascript/src/envVars.js
 .env
+notes.txt
+.eslintrc.js
