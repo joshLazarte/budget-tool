@@ -1,3 +1,4 @@
 /node_modules/
 /public/javascript/dist/
 /public/javascript/src/envVars.js
+.env
