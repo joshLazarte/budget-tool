@@ -3,23 +3,7 @@ const express = require("express"),
   router = express.Router(),
   fs = require("fs"),
   pdf = require("html-pdf"),
-  ejs = require("ejs");
-
-const getZoomLevel = () => {
-  return process.env.OS === "Windows_NT" ? 1.75 : 0.5;
-};
-
-const compile = (template, data, css, zoom) => {
-  const compiled = ejs.compile(fs.readFileSync(template, "utf8"));
-  return compiled({ data, css, zoom });
-};
-
-const getDataFromFile = file => {
-  return fs.readFileSync(file, "utf8", (err, contents) => {
-    if (err) throw err;
-    return contents;
-  });
-};
+  { getZoomLevel, compile, getDataFromFile } = require("../utils/pdf");
 
 router.post("/", (req, res) => {
   const zoom = getZoomLevel();
@@ -48,7 +32,7 @@ router.delete("/delete", (req, res) => {
 router.get("/download", (req, res) => {
   const file = req.session.fileName;
   req.session.fileName = undefined;
-  res.download(file, err => {
+  res.download(file, "Budget Data.pdf", err => {
     if (err) return console.log(err);
     fs.unlinkSync(file);
   });
