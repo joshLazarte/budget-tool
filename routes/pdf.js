@@ -6,7 +6,7 @@ const express = require("express"),
   ejs = require("ejs");
 
 const getZoomLevel = () => {
-  return process.env.OS === "windows" ? 0.5 : 1.75;
+  return process.env.OS === "Windows_NT" ? 1.75 : 0.5;
 };
 
 const compile = (template, data, css, zoom) => {
