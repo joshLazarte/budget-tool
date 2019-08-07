@@ -5,9 +5,13 @@ const express = require("express"),
   pdf = require("html-pdf"),
   ejs = require("ejs");
 
-const compile = (template, data, css) => {
+const getZoomLevel = () => {
+  return process.env.OS === "windows" ? 0.5 : 1.75;
+};
+
+const compile = (template, data, css, zoom) => {
   const compiled = ejs.compile(fs.readFileSync(template, "utf8"));
-  return compiled({ data, css });
+  return compiled({ data, css, zoom });
 };
 
 const getDataFromFile = file => {
@@ -18,8 +22,9 @@ const getDataFromFile = file => {
 };
 
 router.post("/", (req, res) => {
+  const zoom = getZoomLevel();
   const css = getDataFromFile("./public/css/style.css");
-  const content = compile("./docs/template.ejs", req.body, css);
+  const content = compile("./docs/template.ejs", req.body, css, zoom);
   const options = { format: "Letter" };
   const fileName = `./docs/${Date.now()}-budget.pdf`;
 

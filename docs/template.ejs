@@ -18,199 +18,129 @@
   </head>
 
   <style>
-    <%= css %>
-  </style>
+    <%= css %> 
+    html {zoom: <%= zoom %>;}
+  </style>  
+  
 
-  <body class="home-page">
+  <body class="home-page">    
+    
     <navbar class="nav">
-      <div>Budget Helper</div>
+        <div>Budget Helper</div>        
     </navbar>
-
+    
+    
     <div style="width: 80%; margin: 0 auto;">
-      <h1 class="text-center">Budget Info</h1>
-
-      <% function difference(){ %> <% return (data.totalIncome -
-      data.totalExpenses).toFixed(2); %> <% } %> <% const diff = difference() %>
-      <% if(diff > 0) { %>
-      <div
-        class="message"
-        id="message"
-        style="background: #44c932; margin: 20px 0;"
-      >
-        You are Under Budget by $<%= diff %>
-      </div>
-      <% } else if(diff < 0) { %>
-      <div
-        class="message"
-        id="message"
-        style="background: #ff1a1a; margin: 20px 0;"
-      >
-        You are Over Budget by $<%= (diff*-1) %>
-      </div>
-      <% } else { %>
-      <div
-        class="message"
-        id="message"
-        style="background: orange; margin: 20px 0;"
-      >
-        You Broke Even... Be Careful!
-      </div>
-      <% } %>
-
-      <h5>
-        Total Income: <span id="total-income"><%= data.totalIncome %></span>
-      </h5>
-      <h5>
-        Total Expenses:
-        <span id="total-expense"><%= data.totalExpenses %></span>
-      </h5>
-
-      <table class="results-table">
+        <h1 class="text-center">Budget Info</h1>
+        <% function difference(){ %>
+            <% return (data.totalIncome - data.totalExpenses).toFixed(2); %>
+        <% } %>
+        
+        <% const diff = difference() %>
+        <% if(diff > 0) { %>
+            <div class="message" id="message" style="background: #44c932; margin: 20px 0;">
+                    You are Under Budget by $<%= diff %>
+            </div>
+        <% } else if(diff < 0) { %>
+            <div class="message" id="message" style="background: #ff1a1a; margin: 20px 0;">
+                    You are Over Budget by $<%= (diff*-1) %>
+            </div>
+        <% } else { %>
+            <div class="message" id="message" style="background: orange; margin: 20px 0;">
+                    You Broke Even... Be Careful!
+            </div>
+        <% } %>       
+        
+        <h5>Total Income: <span id="total-income"><%= data.totalIncome %></span></h5>
+        <h5>Total Expenses: <span id="total-expense"><%= data.totalExpenses %></span></h5>
+    
+    <table class="results-table">
         <thead>
-          <th></th>
-          <th>Bills <span id="billsLength"><%= data.bills.length %></span></th>
-          <th>Debt <span id="debtLength"><%= data.debt.length %></span></th>
-          <th>
-            Groceries
-            <span id="groceriesLength"><%= data.groceries.length %></span>
-          </th>
-          <th>
-            Prepared Food
-            <span id="preparedFoodLength"><%= data.preparedFood.length %></span>
-          </th>
-          <th>
-            Entertainment
-            <span id="entertainmentLength"
-              ><%= data.entertainment.length %></span
-            >
-          </th>
-          <th>
-            Subscriptions
-            <span id="subscriptionsLength"
-              ><%= data.subscriptions.length %></span
-            >
-          </th>
-          <th>
-            Miscellaneous <span id="miscLength"><%= data.misc.length %></span>
-          </th>
+            <th></th>
+            <th>Bills <span id="billsLength">(<%= data.bills.length %>)</span></th>
+            <th>Debt <span id="debtLength">(<%= data.debt.length %>)</span></th>
+            <th>Groceries <span id="groceriesLength">(<%= data.groceries.length %>)</span></th>
+            <th>Prepared Food <span id="preparedFoodLength">(<%= data.preparedFood.length %>)</span></th>
+            <th>Entertainment <span id="entertainmentLength">(<%= data.entertainment.length %>)</span></th>
+            <th>Subscriptions <span id="subscriptionsLength">(<%= data.subscriptions.length %>)</span></th>
+            <th>Miscellaneous <span id="miscLength">(<%= data.misc.length %>)</span></th>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Total</th>
-            <td class="category-total-containers"><%= data.totalBills %></td>
-            <td class="category-total-containers"><%= data.totalDebt %></td>
-            <td class="category-total-containers">
-              <%= data.totalGroceries %>
-            </td>
-            <td class="category-total-containers">
-              <%= data.totalPreparedFood %>
-            </td>
-            <td class="category-total-containers">
-              <%= data.totalEntertainment %>
-            </td>
-            <td class="category-total-containers">
-              <%= data.totalSubscriptions %>
-            </td>
-            <td class="category-total-containers"><%= data.totalMisc %></td>
-          </tr>
-
-          <% function percentOfIncome(categoryTotal){ %> <% if(data.totalIncome
-          === 0){ %> <% return 'N/A'; %> <% } else { %> <% return
-          ((categoryTotal / data.totalIncome) * 100).toFixed(1) + '%' ; %> <% }
-          %> <% } %> <% function percentOfExpense(categoryTotal){ %> <%
-          if(data.totalExpenses === 0){ %> <% return 'N/A'; %> <% } else { %> <%
-          return ((categoryTotal / data.totalExpenses) * 100).toFixed(1) + '%' ;
-          %> <% } %> <% } %>
-
-          <tr>
-            <th scope="row">% of Income</th>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalBills) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalDebt) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalGroceries) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalPreparedFood) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalEntertainment) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalSubscriptions) %>
-            </td>
-            <td class="category-percent-containers">
-              <%= percentOfIncome(data.totalMisc) %>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">% of Expenses</th>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalBills) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalDebt) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalGroceries) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalPreparedFood) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalEntertainment) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalSubscriptions) %>
-            </td>
-            <td class="category-expense-percent-containers">
-              <%= percentOfExpense(data.totalExpenses) %>
-            </td>
-          </tr>
+            <tr>
+                <th scope="row">Total</th>
+                <td class="category-total-containers"><%= data.totalBills %></td>
+                <td class="category-total-containers"><%= data.totalDebt %></td>
+                <td class="category-total-containers"><%= data.totalGroceries %></td>
+                <td class="category-total-containers"><%= data.totalPreparedFood %></td>
+                <td class="category-total-containers"><%= data.totalEntertainment %></td>
+                <td class="category-total-containers"><%= data.totalSubscriptions %></td>
+                <td class="category-total-containers"><%= data.totalMisc %></td>
+            </tr>
+             <% function percentOfIncome(categoryTotal){ %>
+                <%    if(data.totalIncome === 0){ %> 
+                <%        return 'N/A'; %>
+                <%    } else { %>
+                <%    return ((categoryTotal / data.totalIncome) * 100).toFixed(1) + '%' ; %>
+                <%    } %>
+             <% } %>
+             <% function percentOfExpense(categoryTotal){ %>
+                <%    if(data.totalExpenses === 0){ %> 
+                <%        return 'N/A'; %>
+                <%    } else { %>
+                <%    return ((categoryTotal / data.totalExpenses) * 100).toFixed(1) + '%' ; %>
+                <%    } %>
+             <% } %>
+            <tr>
+                <th scope="row">% of Income</th>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalBills) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalDebt) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalGroceries) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalPreparedFood) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalEntertainment) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalSubscriptions) %></td>
+                <td class="category-percent-containers"><%= percentOfIncome(data.totalMisc) %></td>
+            </tr>
+            <tr>
+                <th scope="row">% of Expenses</th>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalBills) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalDebt) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalGroceries) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalPreparedFood) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalEntertainment) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalSubscriptions) %></td>
+                <td class="category-expense-percent-containers"><%= percentOfExpense(data.totalExpenses) %></td>
+            </tr>
         </tbody>
-      </table>
-
-      <div class="list">
+    </table>
+    
+    <div class="list">
         <div class="u-pull-left list__container1">
-          <h5 class="u-underlined">
-            Income <span id="inArLength"><%= data.incomeArray.length %></span>
-          </h5>
-          <ul class="list__container1-income" id="income-list">
-            <% data.incomeArray.forEach(function(income){ %>
-            <li id="income-<%= income.id %>">
-              <%= income.source %>: <%= income.amount %> <br />
-              <%= income.date %>
-            </li>
-            <% }); %>
-          </ul>
+            <h5 class="u-underlined">Income <span id="inArLength"><%= data.incomeArray.length %></span></h5>
+            <ul class="list__container1-income" id="income-list">
+                <% data.incomeArray.forEach(function(income){ %>
+                    <li id="income-<%= income.id %>">
+                        <%= income.source %>: <%= income.amount %> <br> <%= income.date %>                        
+                    </li>
+                <% }); %>
+            </ul>
         </div>
-
+        
         <div class="u-pull-left list__container2">
-          <h5 class="u-underlined">
-            Expenses
-            <span id="exArLength"><%= data.expenseArray.length %></span>
-          </h5>
-          <ul class="list__container2-expense" id="expense-list">
-            <% data.expenseArray.forEach(function(expense){ %>
-            <li id="expense-<%= expense.id %>">
-              <%= expense.name %>: <%= expense.amount %> <br />
-              <%= expense.date %>
-            </li>
-            <% }); %>
-          </ul>
+            <h5 class="u-underlined">Expenses <span id="exArLength"><%= data.expenseArray.length %></span></h5>
+            <ul class="list__container2-expense" id="expense-list">
+                <% data.expenseArray.forEach(function(expense){ %>
+                    <li id="expense-<%= expense.id %>">
+                        <%= expense.name %>: <%= expense.amount %> <br> <%= expense.date %>                        
+                    </li>
+                <% }); %>
+            </ul>
         </div>
-        <div
-          class="u-pull-left"
-          style="height: 40rem; width: 40rem; margin-left: 5rem;"
-        >
-          <canvas id="myChart"></canvas>
+        <div class="u-pull-left" style="height: 40rem; width: 40rem; margin-left: 5rem;">
+            <canvas id="myChart"></canvas>
         </div>
-      </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-  </body>
+    </div>    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>  
+</body>
 </html>
