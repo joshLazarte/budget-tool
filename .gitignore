@@ -1,6 +1,7 @@
 /node_modules/
 /public/javascript/dist/
 /public/javascript/src/envVars.js
+/public/css
 .env
 notes.txt
 .eslintrc.json

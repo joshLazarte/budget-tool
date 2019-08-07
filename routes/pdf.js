@@ -3,28 +3,24 @@ const express = require("express"),
   router = express.Router(),
   fs = require("fs"),
   pdf = require("html-pdf"),
-  path = require("path"),
   ejs = require("ejs");
 
 const compile = (template, data, css) => {
   const compiled = ejs.compile(fs.readFileSync(template, "utf8"));
-  const html = compiled({ data, css });
-  return html;
+  return compiled({ data, css });
 };
 
 const getDataFromFile = file => {
-  const data = fs.readFileSync(file, "utf8", (err, contents) => {
+  return fs.readFileSync(file, "utf8", (err, contents) => {
     if (err) throw err;
     return contents;
   });
-  return data;
 };
 
 router.post("/", (req, res) => {
   const css = getDataFromFile("./public/css/style.css");
   const content = compile("./docs/template.ejs", req.body, css);
   const options = { format: "Letter" };
-
   const fileName = `./docs/${Date.now()}-budget.pdf`;
 
   req.session.fileName = fileName;
