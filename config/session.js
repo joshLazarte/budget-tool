@@ -5,7 +5,7 @@ module.exports = session({
   secret: process.env.SESSIONSECRET,
   resave: true,
   store: new MongoStore({
-    url: "mongodb://localhost/budgetSession",
+    url: process.env.MONGOSTORE,
     ttl: 24 * 60 * 60,
     autoRemove: "native"
   }),
