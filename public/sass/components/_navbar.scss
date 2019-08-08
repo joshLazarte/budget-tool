@@ -3,24 +3,33 @@
     padding: 2rem;
     background-color: $color-blue;
     margin-bottom: 2rem;
+    font-size: 2rem;
     color: white;
-    @include clearfix
-    
+    @include clearfix;
+
     &__brand {
-        dipsplay: inline-block;
-        font-size: 2rem;
+        display: inline-block;
         font-weight: 500;
+        a {
+            color: white;
+        }
     }
-    
+
     &__options {
         .nav__item {
             color: white;
-            font-size: 2rem;
-            
             &:first-child {
                 margin-right: 1.5rem;
             }
         }
     }
-    
+
+}
+
+@media only screen and (max-width: 400px) {
+    .nav {
+        padding: 1rem;
+        background-color: $color-blue;
+        font-size: 1.8rem;
+    }
 }

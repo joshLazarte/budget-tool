@@ -1,23 +1,23 @@
 <form class="modal" id="income-form">
             <h3>Add Income <span class="u-float-right x-btn" id="close-income">X</span></h3>
-            <input class="modal__input u-full-width" type="text" id="income-source" placeholder="Source" required/>
-            <input class="modal__input u-full-width" type="number" id="income-amount" placeholder="Amount" required/>
-            <input class="modal__input u-full-width" type="date" id="income-date" placeholder="Date" required/>
-            <input class="modal__input u-full-width" type="submit" value="submit"/>
+            <input class="u-full-width" type="text" id="income-source" placeholder="Source" required/>
+            <input class="u-full-width" type="number" id="income-amount" placeholder="Amount" required/>
+            <input class="modal__date-input u-full-width" type="date" id="income-date" placeholder="Date" required/>
+            <input class="u-full-width" type="submit" value="submit"/>
         </form>
         
         <form class="modal" id="income-edit-form">
             <h3>Edit Income <span class="u-float-right x-btn" id="close-edit-income">X</span></h3>
-            <input class="modal__input u-full-width" type="text" id="income-edit-source" placeholder="Source" required/>
-            <input class="modal__input u-full-width" type="number" id="income-edit-amount" placeholder="Amount" required/>
-            <input class="modal__input u-full-width" type="date" id="income-edit-date" placeholder="Date" required/>
-            <input class="modal__input u-full-width" type="submit" value="Update"/>
+            <input class="u-full-width" type="text" id="income-edit-source" placeholder="Source" required/>
+            <input class="u-full-width" type="number" id="income-edit-amount" placeholder="Amount" required/>
+            <input class="modal__date-input u-full-width" type="date" id="income-edit-date" placeholder="Date" required/>
+            <input class="u-full-width" type="submit" value="Update"/>
         </form>
         
         <form class="modal" id="expense-form">
             <h3>Add Expense <span class="u-float-right x-btn" id="close-expenses">X</span></h3>
-            <input class="modal__input u-full-width" type="text" id="expense-name" placeholder="Name" required/>
-            <select  class="modal__input u-full-width" id="expense-category" required>
+            <input class="u-full-width" type="text" id="expense-name" placeholder="Name" required/>
+            <select  class="u-full-width" id="expense-category" required>
                 <option disabled selected value=''>Category</option>
                 <option value="bill">Bills</option>
                 <option value="debt">Debt</option>
@@ -27,15 +27,15 @@
                 <option value="subscriptions">Subscriptions</option>
                 <option value="misc">Miscellaneous</option>
             </select>
-            <input class="modal__input u-full-width" type="number" id="expense-amount" placeholder="Amount" required/>
-            <input class="modal__input u-full-width" type="date" id="expense-date" placeholder="Date" required/>
-            <input class="modal__input u-full-width" type="submit" value="submit"/>
+            <input class="u-full-width" type="number" id="expense-amount" placeholder="Amount" required/>
+            <input class="modal__date-input u-full-width" type="date" id="expense-date" placeholder="Date" required/>
+            <input class="u-full-width" type="submit" value="submit"/>
         </form>
         
         <form class="modal" id="expense-edit-form">
             <h3>Edit Expense <span class="u-float-right x-btn" id="close-edit-expenses">X</span></h3>
-            <input class="modal__input u-full-width" type="text" id="expense-edit-name" placeholder="Name" required/>
-            <select  class="modal__input u-full-width" id="expense-edit-category" required>
+            <input class="u-full-width" type="text" id="expense-edit-name" placeholder="Name" required/>
+            <select  class="u-full-width" id="expense-edit-category" required>
                 <option disabled selected value=''>Category</option>
                 <option value="bill">Bills</option>
                 <option value="debt">Debt</option>
@@ -45,21 +45,21 @@
                 <option value="subscriptions">Subscriptions</option>
                 <option value="misc">Miscellaneous</option>
             </select>
-            <input class="modal__input u-full-width" type="number" id="expense-edit-amount" placeholder="Amount" required/>
-            <input class="modal__input u-full-width" type="date" id="expense-edit-date" placeholder="Date" required/>
-            <input class="modal__input u-full-width" type="submit" value="update"/>
+            <input class="u-full-width" type="number" id="expense-edit-amount" placeholder="Amount" required/>
+            <input class="modal__date-input u-full-width" type="date" id="expense-edit-date" placeholder="Date" required/>
+            <input class="u-full-width" type="submit" value="update"/>
         </form>
         
         <form class="modal" id="save-data-form">
             <h3>Save Data As <span class="u-float-right x-btn" id="close-save-data">X</span></h3>
-            <input class="modal__input u-full-width" type="text" id="save-month" placeholder="Month"/>
-            <input class="modal__input u-full-width" type="text" id="save-year" placeholder="Year"/>
-            <input class="modal__input u-full-width" type="submit" value="save"/>
+            <input class="u-full-width" type="text" id="save-month" placeholder="Month"/>
+            <input class="u-full-width" type="text" id="save-year" placeholder="Year"/>
+            <input class="u-full-width" type="submit" value="save"/>
         </form>
 
         <form class="modal" id="download-pdf" action="/pdf/download" method="GET">
             <h3 class="text-center">Download PDF<span class="u-float-right x-btn" id="close-pdf-download">X</span></h3>            
-            <input id="download-submit" class="modal__input u-full-width" type="submit" value="Download"/>
+            <input id="download-submit" class="u-full-width" type="submit" value="Download"/>
         </form>
         
         
