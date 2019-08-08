@@ -1,11 +1,12 @@
 import UI from './ui';
 import { _bv } from './budget-vars';
 import PdfCtrl from './PdfCtrl';
-import buildTable from './table/build';
+import initTable from './table';
 
-buildTable();
+
 
 const AppCtrl = (function(UI) {
+    initTable();
     return {
         loadEventListeners: function() {
             //add income

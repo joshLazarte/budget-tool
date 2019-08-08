@@ -9,7 +9,7 @@ router.post("/", (req, res) => {
   const zoom = getZoomLevel();
   const css = getDataFromFile("./public/css/style.css");
   const content = compile("./docs/template.ejs", req.body, css, zoom);
-  const options = { format: "Letter", renderDelay: 2000 };
+  const options = { format: "Letter" };
   const fileName = `./docs/${Date.now()}-budget.pdf`;
 
   req.session.fileName = fileName;
