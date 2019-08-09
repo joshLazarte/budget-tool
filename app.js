@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(sessionConfig);
 
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => res.render("index", { root: process.env.ROOT }));
 app.use("/pdf", pdf);
 
 app.listen(process.env.PORT, process.env.IP, () =>
