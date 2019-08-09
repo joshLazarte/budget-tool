@@ -9,3 +9,9 @@
 @import "components/btn";
 
 @import "pages/budget-tool";
+
+#table,
+#chart-container,
+#budget-list {
+    display: none;
+}

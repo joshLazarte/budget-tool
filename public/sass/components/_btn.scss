@@ -3,7 +3,25 @@
     cursor: pointer;
 }
 
-.pdf-save {
-    display: block;
-    margin: 3rem auto;
+.action-btns {
+    text-align: center;
+    margin-bottom: 2rem;
+    &__btn {
+        &:not(first-of-type) {
+            margin-left: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .action-btns {
+
+        &__btn {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            &:not(first-of-type) {
+                margin-left: 1rem;
+            }
+        }
+    }
 }

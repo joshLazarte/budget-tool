@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    
+
     <title>Budget Tool</title>
 </head>
 
@@ -21,8 +21,12 @@
         <div class="container">
             <h1 class="text-center">Budget Data</h1>
             <div class="message" id="message" style="display: none"></div>
-
-            <button class="pdf-save">Save as PDF</button>
+            <div class="action-btns">
+                <button id="toggle-table-btn" class="action-btns__btn">Show Table</button>
+                <button id="toggle-chart-btn" class="action-btns__btn">Show Chart</button>
+                <button id="toggle-list-btn" class="action-btns__btn">Show Items</button>
+                <button class="pdf-save action-btns__btn">Save as PDF</button>
+            </div>
 
             <h5>Total Income: <span id="total-income"></span></h5>
             <h5>Total Expenses: <span id="total-expense"></span></h5>
@@ -30,19 +34,21 @@
             <div id="table"></div>
 
             <div class="list">
-                <div class="chart">
+                <div id="chart-container" class="chart">
                     <canvas id="myChart"></canvas>
                 </div>
-                <div class="u-pull-left list__container1">
-                    <h5 class="u-underlined">Income <span id="inArLength"></span></h5>
-                    <ul class="list__container1-income" id="income-list"></ul>
-                </div>
-
-                <div class="u-pull-left list__container2">
-                    <h5 class="u-underlined">Expenses <span id="exArLength"></span></h5>
-                    <ul class="list__container2-expense" id="expense-list"></ul>
-                </div>
+                <span id="budget-list">
+                        <div class="u-pull-left list__container1">
+                        <h5 class="u-underlined">Income <span id="inArLength"></span></h5>
+                <ul class="list__container1-income" id="income-list"></ul>
             </div>
+
+            <div class="u-pull-left list__container2">
+                <h5 class="u-underlined">Expenses <span id="exArLength"></span></h5>
+                <ul class="list__container2-expense" id="expense-list"></ul>
+            </div>
+            </span>
+        </div>
         </div>
 
         <% include ./partials/forms %>

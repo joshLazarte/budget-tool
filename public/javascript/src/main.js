@@ -2,11 +2,13 @@ import UI from './ui';
 import { _bv } from './budget-vars';
 import PdfCtrl from './PdfCtrl';
 import initTable from './table';
+import componentViewCtrl from './component-view-toggler';
 
 
 
 const AppCtrl = (function(UI) {
     initTable();
+    componentViewCtrl();
     return {
         loadEventListeners: function() {
             //add income
