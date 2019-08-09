@@ -13,7 +13,7 @@ app.use(express.static(path.resolve(__dirname, "public")));
 app.use(sessionConfig);
 
 app.get("/", (req, res) => res.render("index"));
-app.use("/pdf", pdf);
+app.use(`${process.env.ROOT}/pdf`, pdf);
 
 app.listen(process.env.PORT, process.env.IP, () =>
   console.log("server has started")
